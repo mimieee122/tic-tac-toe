@@ -51,48 +51,52 @@ function Board({
 
     return (
         <>
-            <div className="status underline">{status}</div>
-            <div className="board-row">
-                <Square
-                    value={squares[0]}
-                    onSquareClick={() => handleClick(0)}
-                />
-                <Square
-                    value={squares[1]}
-                    onSquareClick={() => handleClick(1)}
-                />
-                <Square
-                    value={squares[2]}
-                    onSquareClick={() => handleClick(2)}
-                />
-            </div>
-            <div className="board-row">
-                <Square
-                    value={squares[3]}
-                    onSquareClick={() => handleClick(3)}
-                />
-                <Square
-                    value={squares[4]}
-                    onSquareClick={() => handleClick(4)}
-                />
-                <Square
-                    value={squares[5]}
-                    onSquareClick={() => handleClick(5)}
-                />
-            </div>
-            <div className="board-row">
-                <Square
-                    value={squares[6]}
-                    onSquareClick={() => handleClick(6)}
-                />
-                <Square
-                    value={squares[7]}
-                    onSquareClick={() => handleClick(7)}
-                />
-                <Square
-                    value={squares[8]}
-                    onSquareClick={() => handleClick(8)}
-                />
+            <div className="dark:bg-slate-800 dark:text-white">
+                <div className="status underline">{status}</div>
+                <div className="border-[3px] border-black">
+                    <div className="board-row">
+                        <Square
+                            value={squares[0]}
+                            onSquareClick={() => handleClick(0)}
+                        />
+                        <Square
+                            value={squares[1]}
+                            onSquareClick={() => handleClick(1)}
+                        />
+                        <Square
+                            value={squares[2]}
+                            onSquareClick={() => handleClick(2)}
+                        />
+                    </div>
+                    <div className="board-row">
+                        <Square
+                            value={squares[3]}
+                            onSquareClick={() => handleClick(3)}
+                        />
+                        <Square
+                            value={squares[4]}
+                            onSquareClick={() => handleClick(4)}
+                        />
+                        <Square
+                            value={squares[5]}
+                            onSquareClick={() => handleClick(5)}
+                        />
+                    </div>
+                    <div className="board-row">
+                        <Square
+                            value={squares[6]}
+                            onSquareClick={() => handleClick(6)}
+                        />
+                        <Square
+                            value={squares[7]}
+                            onSquareClick={() => handleClick(7)}
+                        />
+                        <Square
+                            value={squares[8]}
+                            onSquareClick={() => handleClick(8)}
+                        />
+                    </div>
+                </div>
             </div>
         </>
     )
@@ -133,9 +137,10 @@ export default function Game() {
 
     return (
         <>
-            <p className="title text-4xl ">TIC-TAC-TOE GAME</p>
-            <div className="game flex flex-row gap-3 justify-start">
-                <div className=" w-[200px] h-[200px] photo"></div>
+            <p className="title text-8xl">TIC-TAC-TOE GAME</p>
+
+            <div className=" game flex flex-row gap-3 justify-start">
+                <div className=" w-[350px] h-[350px] photo"></div>
 
                 <div className="game-board ">
                     <Board
@@ -144,8 +149,9 @@ export default function Game() {
                         onPlay={handlePlay}
                     />
                 </div>
-                <div className="game-info whitespace-nowrap">
-                    <ol>{moves}</ol>
+                <div className="relative game-info whitespace-nowrap">
+                    <ol className="absolute z-10">{moves}</ol>
+                    <div className="girl w-[400px] h-[400px] opacity-70"></div>
                 </div>
             </div>
         </>
