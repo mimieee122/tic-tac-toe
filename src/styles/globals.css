@@ -2,32 +2,74 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+* {
+    box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+ul {
+    padding-inline-start: 20px;
 }
 
+html,
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    height: 400px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+@font-face {
+    font-family: 'SF_HambakSnow';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HambakSnow.woff')
+        format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.square {
+    background: #fff;
+    border: 1px solid #999;
+    float: left;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 54px;
+    height: 54px;
+    margin-right: -1px;
+    margin-top: -1px;
+    padding: 0;
+    text-align: center;
+    width: 54px;
+}
+
+.board-row:after {
+    clear: both;
+    content: '';
+    display: table;
+}
+.status {
+    margin-bottom: 10px;
+}
+.game {
+    display: flex;
+    flex-direction: row;
+    margin-left: 50px;
+    font-family: 'SF_HambakSnow';
+    margin-bottom: 0px;
+}
+
+.title {
+    margin-top: 20px;
+    margin-left: 50px;
+    font-family: 'SF_HambakSnow';
+    margin-bottom: 60px;
+}
+
+.game-info {
+    margin-left: 60px;
+    font-size: 10px;
+}
+
+.photo {
+    background-image: url('https://github.com/mimieee122/mslogo/blob/main/%ED%8B%B1%ED%83%9D%ED%86%A0.png?raw=true');
+    background-repeat: no-repeat;
+    background-size: contain;
 }
