@@ -1,6 +1,17 @@
 import { useState } from 'react'
 
-function Square({ value, onSquareClick }) {
+type Square = 'X' | 'O' | null
+type Squares = Square[]
+type HistoryItem = Squares
+type History = HistoryItem[]
+
+function Square({
+    value,
+    onSquareClick,
+}: {
+    value: Square
+    onSquareClick: () => void
+}) {
     return (
         <button className="square" onClick={onSquareClick}>
             {value}
@@ -8,12 +19,20 @@ function Square({ value, onSquareClick }) {
     )
 }
 
-function Board({ xIsNext, squares, onPlay }) {
-    function handleClick(i) {
+function Board({
+    xIsNext,
+    squares,
+    onPlay,
+}: {
+    xIsNext: boolean
+    squares: Squares
+    onPlay: (nextSquares: Squares) => void
+}) {
+    function handleClick(i: number) {
         if (calculateWinner(squares) || squares[i]) {
             return
         }
-        const nextSquares = squares.slice()
+        const nextSquares = [...squares]
         if (xIsNext) {
             nextSquares[i] = 'X'
         } else {
@@ -80,18 +99,21 @@ function Board({ xIsNext, squares, onPlay }) {
 }
 
 export default function Game() {
-    const [history, setHistory] = useState([Array(9).fill(null)])
+    const [history, setHistory] = useState<History>([Array(9).fill(null)])
     const [currentMove, setCurrentMove] = useState(0)
     const xIsNext = currentMove % 2 === 0
     const currentSquares = history[currentMove]
 
-    function handlePlay(nextSquares) {
-        const nextHistory = [...history.slice(0, currentMove + 1), nextSquares]
+    function handlePlay(nextSquares: Squares) {
+        const nextHistory: History = [
+            ...history.slice(0, currentMove + 1),
+            nextSquares,
+        ]
         setHistory(nextHistory)
         setCurrentMove(nextHistory.length - 1)
     }
 
-    function jumpTo(nextMove) {
+    function jumpTo(nextMove: number) {
         setCurrentMove(nextMove)
     }
 
@@ -130,7 +152,7 @@ export default function Game() {
     )
 }
 
-function calculateWinner(squares) {
+function calculateWinner(squares: Squares): Square {
     const lines = [
         [0, 1, 2],
         [3, 4, 5],
