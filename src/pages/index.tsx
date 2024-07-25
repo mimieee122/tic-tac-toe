@@ -139,20 +139,27 @@ export default function Game() {
 
     return (
         <>
-            <p className="title text-7xl text-[#1e40af]">TIC-TAC-TOE GAME 🪼</p>
-
-            <div className=" game flex flex-row justify-center">
-                <div className="mt-10 w-[300px] h-[300px] border-blue-800 border-[4px] photo"></div>
-
-                <div className="game-board ml-20 ">
-                    <Board
-                        xIsNext={xIsNext}
-                        squares={currentSquares}
-                        onPlay={handlePlay}
-                    />
+            <div className="container">
+                <div className="flex flex-row justify-center gap-2">
+                    <p className="title text-7xl text-[#1e40af]">
+                        TIC-TAC-TOE GAME
+                    </p>
+                    <div className="animal w-[150px] h-[100px]"></div>
                 </div>
-                <div className=" game-info text-gray-400 whitespace-nowrap">
-                    <ol className="">{moves}</ol>
+
+                <div className=" game w-[100%] h-[100%] flex flex-row justify-center">
+                    <div className="mt-10 w-[300px] h-[300px] border-blue-800 border-[4px] photo"></div>
+
+                    <div className="game-board ml-20 ">
+                        <Board
+                            xIsNext={xIsNext}
+                            squares={currentSquares}
+                            onPlay={handlePlay}
+                        />
+                    </div>
+                    <div className=" game-info text-gray-400 whitespace-nowrap">
+                        <ol className="">{moves}</ol>
+                    </div>
                 </div>
             </div>
         </>
