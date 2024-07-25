@@ -52,8 +52,10 @@ function Board({
     return (
         <>
             <div className="dark:bg-slate-800 dark:text-white">
-                <div className="status underline">{status}</div>
-                <div className="border-[3px] border-black">
+                <div className="status text-bold text-blue-300 text-xl underline">
+                    {status}
+                </div>
+                <div className=" text-white">
                     <div className="board-row">
                         <Square
                             value={squares[0]}
@@ -137,21 +139,20 @@ export default function Game() {
 
     return (
         <>
-            <p className="title text-8xl">TIC-TAC-TOE GAME</p>
+            <p className="title text-7xl text-[#1e40af]">TIC-TAC-TOE GAME 🪼</p>
 
-            <div className=" game flex flex-row gap-3 justify-start">
-                <div className=" w-[350px] h-[350px] photo"></div>
+            <div className=" game flex flex-row justify-center">
+                <div className="mt-10 w-[300px] h-[300px] border-blue-800 border-[4px] photo"></div>
 
-                <div className="game-board ">
+                <div className="game-board ml-20 ">
                     <Board
                         xIsNext={xIsNext}
                         squares={currentSquares}
                         onPlay={handlePlay}
                     />
                 </div>
-                <div className="relative game-info whitespace-nowrap">
-                    <ol className="absolute z-10">{moves}</ol>
-                    <div className="girl w-[400px] h-[400px] opacity-70"></div>
+                <div className=" game-info text-gray-400 whitespace-nowrap">
+                    <ol className="">{moves}</ol>
                 </div>
             </div>
         </>

@@ -18,6 +18,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: black;
 }
 @font-face {
     font-family: 'SF_HambakSnow';
@@ -28,12 +29,12 @@ body {
 }
 
 .square {
-    background: #fff;
-    border: 4px solid black;
+    background: black;
+    border: 6px solid #1e40af;
     float: left;
     font-size: 50px;
     font-weight: bold;
-    line-height: 154px;
+    line-height: 14px;
 
     margin-right: -1px;
     margin-top: -1px;
@@ -54,7 +55,7 @@ body {
 .game {
     display: flex;
     flex-direction: row;
-    margin-left: 50px;
+
     font-family: 'SF_HambakSnow';
     text-align: center;
 }
@@ -64,22 +65,23 @@ body {
     margin-left: 50px;
     font-family: 'SF_HambakSnow';
     margin-bottom: 80px;
-    -webkit-text-stroke: 4px;
+    -webkit-text-stroke: 4px #1e40af;
 }
 
 .game-info {
-    margin-left: 60px;
+    margin-left: 80px;
     font-size: 20px;
+    text-align: left;
 }
 
 .photo {
-    background-image: url('https://github.com/mimieee122/mslogo/blob/main/%ED%8B%B1%ED%83%9D%ED%86%A0.png?raw=true');
+    background-image: url('https://i.pinimg.com/564x/cf/c7/a4/cfc7a42c6ba66d93c3f9b93728b3a6c4.jpg');
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
 }
 
 .girl {
-    background-image: url('https://github.com/mimieee122/mslogo/blob/main/%EC%86%90.png?raw=true');
+    background-image: url('https://github.com/mimieee122/mslogo/blob/main/%ED%8B%B1%ED%83%9D%ED%86%A0%EC%BA%90%EB%A6%AD%ED%84%B0.png?raw=true');
     background-repeat: no-repeat;
     background-size: contain;
 }
